@@ -1,0 +1,60 @@
+<div>
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit(profileForm.value)" id="msform">
+
+    <!-- progressbar -->
+
+    <!-- fieldsets -->
+    <fieldset>
+
+      <h2 class="fs-title">Create your account</h2>
+      <div>
+
+          <input type ="text" placeholder= FromStation formControlName="fromStation" required>
+          
+        
+        <!-- <div [hidden]="fromStation.valid " class="alert alert-danger">
+          FromStation is required
+        </div> -->
+      </div>
+      <input type ="text" placeholder= toStation formControlName="toStation" required>
+      <!-- <div [hidden]="toStation.valid " class="alert alert-danger">
+        ToStation is required
+      </div> -->
+
+      <input type="date" placeholder="Date" formControlName="date" required />
+      <!-- <div [hidden]="date.valid " class="alert alert-danger">
+        Date is required
+      </div> -->
+      <input type="text" maxlength="5" placeholder="Train Number" formControlName="trainNo" required/>
+      <!-- <div [hidden]="trainNo.valid " class="alert alert-danger">
+        TrainNo is required
+      </div> -->
+      <input type ="number" placeholder= noOfTickets formControlName="noOfTicket" required>
+      
+      <!-- <div [hidden]="noOfTicket.valid " class="alert alert-danger">
+        NoOfTicket is required
+      </div> -->
+      <input type ="text" placeholder= typeOfTickets formControlName="typeOfTicket" required>
+      <!-- <div [hidden]="typeOfTicket.valid " class="alert alert-danger">
+        TypeOfTicket is required
+      </div> -->
+      <input type="submit" [disabled]="!profileForm.valid" class="btn btn-success" />
+
+    </fieldset>
+   
+  </form>
+  <div *ngFor = "let data of irctcFormData "> {{data | json}}</div>
+  <!-- <div>
+    <table>
+      <tr>
+      <th> fromStation </th>
+      <th> toStation </th>
+      <th> date </th>
+      <th> trainNo </th>
+      <th> noOfTicket </th>
+      <th> typeOfTicket </th>
+      </tr>
+    </table>
+  </div> -->
+  
+</div>
